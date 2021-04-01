@@ -80,6 +80,11 @@ const service = {
       });
     }
   },
+  isDebugVersion() {
+    return native.isDebugVersion().then(resp => {
+      return typeof resp === 'string' ? JSON.parse(resp) : resp;
+    });
+  },
   /* 修改状态栏颜色，仅支持IOS,默认白色 */
   // changeStateColor(colorRGBA) {
   //   return new Promise((resolve, reject) => {

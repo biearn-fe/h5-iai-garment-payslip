@@ -173,4 +173,12 @@ export default {
   openSysBrowser(url) {
     return this.callApi(IAI_COMMON, 'openSysBrowser', [url]);
   },
+  /**
+   * 是否是debug版本
+   * @param {}
+   * @return {*|promise}
+   */
+  isDebugVersion() {
+    return this.callApi(IAI_COMMON, 'isDebugVersion');
+  }
 };

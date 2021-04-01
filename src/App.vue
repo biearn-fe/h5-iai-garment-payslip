@@ -126,6 +126,17 @@ export default {
         console.log('getUser', userInfo);
         console.log('env', env);
       });
+      /**
+       * 是否是debug版本
+       */
+      service.isDebugVersion().then(resp => {
+        console.log('getDebugInfo', resp);
+        if(resp.resCode == 200){
+          if(resp.isDebug == 1){
+            new VConsole();
+          }
+        }
+      });
       // const user = await this.$nativeApi.getUser();
       // this.$store.commit('updateUser', user);
       if (env !== 'local') {
